@@ -1,0 +1,2 @@
+﻿vk_api_token_here
+vk_group_url_here
