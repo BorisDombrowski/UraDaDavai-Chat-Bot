@@ -4,7 +4,8 @@ namespace UraDaDavai_Chat_Bot.CommandsValidationMiddleware
 {
     public class CommandsValidationMiddleware : CommandsValidationMiddlewareBase
     {
-        public CommandsValidationMiddleware(ICommandsExecutor executor) : base(executor) { }
+        public CommandsValidationMiddleware(ICommandsExecutor executor, IBotNameValidator botNameValidator) 
+            : base(executor, botNameValidator) { }
 
         public override void OnCommandReceived(CommandDataBase commandData)
         {
@@ -28,7 +29,7 @@ namespace UraDaDavai_Chat_Bot.CommandsValidationMiddleware
         private bool IsCommandStartsByBotName(string command)
         {
             var split = command.Split(' ');
-            return BotNameValidator.ValidateName(split[0]);
+            return IsBotName(split[0]);
         }
 
         private string RemoveBotNameFromCommand(string command)
