@@ -5,15 +5,12 @@ namespace UraDaDavai_Chat_Bot.CommandsValidationMiddleware
     public abstract class CommandsValidationMiddlewareBase
     {
         private ICommandsExecutor _commandsExecutor;
+        private IBotNameValidator _botNameValidator;
 
-        public CommandsValidationMiddlewareBase(ICommandsExecutor executor)
+        public CommandsValidationMiddlewareBase(ICommandsExecutor executor, IBotNameValidator botNameValidator)
         {
-            if(executor == null)
-            {
-                throw new ArgumentNullException("Command executor is null");
-            }
-
-            _commandsExecutor = executor;
+            _commandsExecutor = executor ?? throw new ArgumentNullException(nameof(executor));
+            _botNameValidator = botNameValidator ?? throw new ArgumentNullException(nameof(botNameValidator));
         }
 
         public abstract void OnCommandReceived(CommandDataBase commandData);
@@ -21,6 +18,11 @@ namespace UraDaDavai_Chat_Bot.CommandsValidationMiddleware
         protected string SendCommandForExecution(string command)
         {
             return _commandsExecutor.ExecuteCommand(command);
+        }
+
+        protected bool IsBotName(string inputString)
+        {
+            return _botNameValidator.IsBotName(inputString);
         }
     }
 }

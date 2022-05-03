@@ -14,7 +14,7 @@ namespace UraDaDavai_Chat_Bot.CommandsValidationMiddleware
         {
             if(commandsValidationMiddleware == null)
             {
-                throw new ArgumentNullException("Command validation middleware is null");
+                throw new ArgumentNullException(nameof(commandsValidationMiddleware));
             }
 
             CommandReceived += commandsValidationMiddleware.OnCommandReceived;

@@ -14,14 +14,9 @@ namespace UraDaDavai_Chat_Bot.CommandsValidationMiddleware
 
         public CommandDataBase(string senderId, string command, Action<string, string> sendResponceMethod)
         {
-            if(sendResponceMethod == null)
-            {
-                throw new ArgumentNullException("Send responce method is null");
-            }
-
             SenderId = senderId;
             Command = command;
-            _sendResponceMethod += sendResponceMethod;
+            _sendResponceMethod += sendResponceMethod ?? throw new ArgumentNullException(nameof(sendResponceMethod));
         }
 
         public void SendResponce(string message)
