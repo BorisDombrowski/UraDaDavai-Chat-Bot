@@ -8,7 +8,7 @@ namespace UraDaDavai_Chat_Bot.CommandsValidationMiddleware
 {
     public abstract class UserIOProviderBase
     {
-        protected event Action<CommandDataBase> CommandReceived;
+        protected Action<CommandDataBase> CommandReceived;
 
         public UserIOProviderBase(CommandsValidationMiddlewareBase commandsValidationMiddleware)
         {
