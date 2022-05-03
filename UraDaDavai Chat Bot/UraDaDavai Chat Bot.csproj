@@ -12,4 +12,8 @@
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="VkBotFramework" Version="1.0.0" />
+  </ItemGroup>
+
 </Project>
