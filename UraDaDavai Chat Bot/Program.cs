@@ -12,7 +12,9 @@ class Program
             new RepeatCommand(),
             new GenerateUraDaDavaiCommand());
 
-        CommandsValidationMiddlewareBase middleware = new CommandsValidationMiddleware(executor);
+        IBotNameValidator botNameValidator = new SimpleBotNameValidator();
+
+        CommandsValidationMiddlewareBase middleware = new CommandsValidationMiddleware(executor, botNameValidator);
 
         VkApiProviderDataLoader dataLoader = new VkApiProviderDataLoader();
 
