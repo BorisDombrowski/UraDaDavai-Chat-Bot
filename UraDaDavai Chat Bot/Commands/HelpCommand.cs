@@ -10,7 +10,7 @@ namespace UraDaDavai_Chat_Bot.Commands
 
             if (split.Length == 1)
             {
-                if (split[0].ToLower() == "/help")
+                if (split[0].ToLower() == "/help" || split[0].ToLower() == "help")
                 {
                     return true;
                 }
@@ -22,7 +22,7 @@ namespace UraDaDavai_Chat_Bot.Commands
         protected override string CommandExecution(string inputString)
         {
             return
-            "При использовании бота в беседе добавлейте перед командой ура/ura\n" +
+            "При использовании бота в беседе добавлейте перед командой @ura_da_davai_bot\n" +
             "\n" +
             "\n" +
             "• ген/gen <число_слов> [+] - генерация текста УРА ДА ДАВАЙ\n" +

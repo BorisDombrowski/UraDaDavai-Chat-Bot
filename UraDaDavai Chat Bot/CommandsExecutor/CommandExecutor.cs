@@ -15,7 +15,7 @@ namespace UraDaDavai_Chat_Bot.CommandsExecutor
         {
             var cmd = _commands.FirstOrDefault(x => x.CheckStringConformity(command));
             return cmd?.Execute(command)
-                 ?? "Команда не найдена или указаны неверные аргументы.\nОтправьте help, чтобы получить справку по командам.";
+                 ?? "Команда не найдена или указаны неверные аргументы.\nОтправьте /help, чтобы получить справку по командам.";
         }
     }
 }
