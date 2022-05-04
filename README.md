@@ -7,3 +7,4 @@
 
 Существующие на данным момент реализации:
 - VK: https://vk.com/ura_da_davai
+- Telegram: @ura_da_davai_bot
