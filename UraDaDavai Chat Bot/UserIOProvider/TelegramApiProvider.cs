@@ -21,8 +21,11 @@ namespace UraDaDavai_Chat_Bot.UserIOProvider
             var message = e.Message.Text;
             var senderId = e.Message.Chat.Id;
 
-            var data = new TelegramCommandData(senderId.ToString(), message, SendResponce);
-            CommandReceived?.Invoke(data);
+            if (!string.IsNullOrEmpty(message))
+            {
+                var data = new TelegramCommandData(senderId.ToString(), message, SendResponce);
+                CommandReceived?.Invoke(data);
+            }
         }
 
         public override void Start()
