@@ -10,7 +10,7 @@ namespace UraDaDavai_Chat_Bot.Commands
 
             if (split.Length == 1)
             {
-                if (split[0].ToLower() == "help")
+                if (split[0].ToLower() == "/help")
                 {
                     return true;
                 }

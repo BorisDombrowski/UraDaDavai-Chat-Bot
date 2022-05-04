@@ -8,3 +8,6 @@ dotnet_diagnostic.CS8604.severity = silent
 
 # CA1805: Не делайте лишних инициализаций
 dotnet_diagnostic.CA1805.severity = silent
+
+# CS0618: Тип или член устарел
+dotnet_diagnostic.CS0618.severity = silent
