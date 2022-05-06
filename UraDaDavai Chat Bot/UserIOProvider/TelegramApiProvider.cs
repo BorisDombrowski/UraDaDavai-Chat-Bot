@@ -31,7 +31,10 @@ namespace UraDaDavai_Chat_Bot.UserIOProvider
         public override void Start()
         {
             _bot.StartReceiving();
-            Console.ReadLine();
+            while (true)
+            {
+                Thread.Sleep(1000);
+            }
         }
 
         public override void SendResponce(string toId, string message)
